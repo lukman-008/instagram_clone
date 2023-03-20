@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/credential/sign_in_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,11 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Instagram Clone',
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Text("hello world123"),
+      home: SignInPage(),
     );
   }
 }
