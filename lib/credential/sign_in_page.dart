@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -9,7 +10,7 @@ class SignInPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset("assets/ic_instagram.svg")
+          Center(child: new SvgPicture.asset("assets/ic_instagram.svg",color: Colors.white,))
       ],
       ),
     );
