@@ -9,7 +9,7 @@ class SignInPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        
+        SvgPicture.asset("assets/ic_instagram.svg")
       ],
       ),
     );
