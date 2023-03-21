@@ -35,6 +35,7 @@ dependencies:
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
   firebase_storage: ^11.0.16
+  firebase_auth_web: ^5.2.10
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
@@ -42,7 +43,7 @@ dependencies:
   flutter_svg: ^2.0.4
   get_it: ^7.2.0
   image_picker: ^0.8.7
-  intl: ^0.18.0
+  intl: ^0.17.0
   uuid: ^3.0.7
 
 dev_dependencies:
