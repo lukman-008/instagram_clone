@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/consts.dart';
+import 'package:instagram_clone/credential/sign_in_page.dart';
 import 'package:instagram_clone/features/presentation/widgets/button_container_widget.dart';
 import 'package:instagram_clone/features/presentation/widgets/form_container_widget.dart';
 
@@ -73,13 +74,16 @@ class SignUpPage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   "Already have an account? ",
                   style: TextStyle(color: primaryColor),
                 ),
                 InkWell(
-                  child: Text(
+                  onTap:() {
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignInPage()), (route) => false);
+              },
+                  child:const Text(
                     "Sign in.",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: primaryColor),
