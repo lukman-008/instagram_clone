@@ -47,7 +47,7 @@ class SignInPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text("Already have an account? ",style: TextStyle(color: primaryColor),
+            Text("Don't have an account? ",style: TextStyle(color: primaryColor),
             ),
             InkWell(
               child: Text("Sign up.",style: TextStyle(fontWeight: FontWeight.bold,color: primaryColor),),
