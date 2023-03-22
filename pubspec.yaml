@@ -42,8 +42,9 @@ dependencies:
   flutter_svg: ^2.0.4
   get_it: ^7.2.0
   image_picker: ^0.8.7
-  intl: ^0.17.0
+  intl : ^0.17.0
   uuid: ^3.0.7
+  community_material_icon: ^5.9.55
 
 dev_dependencies:
   flutter_lints: ^2.0.0
