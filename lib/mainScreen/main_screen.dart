@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/consts.dart';
 import 'package:instagram_clone/pages/HomePage.dart';
+import 'package:instagram_clone/pages/activitypage.dart';
+import 'package:instagram_clone/pages/postpage.dart';
+import 'package:instagram_clone/pages/profilepage.dart';
+import 'package:instagram_clone/pages/searchPage.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -80,38 +84,10 @@ class _MainScreenState extends State<MainScreen> {
         controller: pageController,
         children: [
           HomePage(),
-          Center(
-            child: Text(
-              "Search",
-              style: TextStyle(
-                color: primaryColor,
-              ),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Post",
-              style: TextStyle(
-                color: primaryColor,
-              ),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Activity",
-              style: TextStyle(
-                color: primaryColor,
-              ),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Profile",
-              style: TextStyle(
-                color: primaryColor,
-              ),
-            ),
-          ),
+          searchPage(),
+          PostPage(),
+          ActivityPage(),
+          ProfilePage()
         ],
         onPageChanged: onPageChanged,
       ),
