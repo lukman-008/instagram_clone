@@ -100,6 +100,7 @@ class _HomePageState extends State<HomePage> {
                               n == true
                                   ? Icons.favorite
                                   : Icons.favorite_border_outlined,
+                              color: primaryColor,
                             )),
                         Icon(
                           Feather.message_circle,
@@ -122,6 +123,7 @@ class _HomePageState extends State<HomePage> {
                           o == true
                               ? Icons.bookmark
                               : Icons.bookmark_border_outlined,
+                          color: primaryColor,
                         )),
                   ],
                 ),
@@ -228,6 +230,7 @@ class _HomePageState extends State<HomePage> {
                               m == true
                                   ? Icons.favorite
                                   : Icons.favorite_border_outlined,
+                              color: primaryColor,
                             )),
                         Icon(
                           Feather.message_circle,
@@ -241,16 +244,18 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     IconButton(
-                        onPressed: () {
-                          setState(() {
-                            p = !p;
-                          });
-                        },
-                        icon: Icon(
-                          p == true
-                              ? Icons.bookmark
-                              : Icons.bookmark_border_outlined,
-                        )),
+                      onPressed: () {
+                        setState(() {
+                          p = !p;
+                        });
+                      },
+                      icon: Icon(
+                        p == true
+                            ? (Icons.bookmark)
+                            : Icons.bookmark_border_outlined,
+                      ),
+                      color: primaryColor,
+                    ),
                   ],
                 ),
               ),
