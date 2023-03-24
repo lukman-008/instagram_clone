@@ -159,15 +159,13 @@ class ProfilePage extends StatelessWidget {
         builder: (context) {
           return Container(
             height: 150,
-      
             decoration: BoxDecoration(color: backGroundColor.withOpacity(0.8)),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  
                   Padding(
-                    padding: EdgeInsets.only(left: 10,top: 10),
+                    padding: EdgeInsets.only(left: 10, top: 10),
                     child: Text(
                       'MoreOptions',
                       style: TextStyle(
@@ -190,8 +188,7 @@ class ProfilePage extends StatelessWidget {
                     padding: EdgeInsets.only(left: 10),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage(),));
-                      
+                        Navigator.pushNamed(context, PageConsts.edpp);
                       },
                       child: Text(
                         "Edit Profile",
@@ -208,7 +205,7 @@ class ProfilePage extends StatelessWidget {
                     color: secondaryColor,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 10,top: 10),
+                    padding: EdgeInsets.only(left: 10, top: 10),
                     child: Text(
                       "Logout",
                       style: TextStyle(

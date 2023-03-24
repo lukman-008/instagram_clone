@@ -34,8 +34,7 @@ class SignInPage extends StatelessWidget {
                 color: blueColor,
                 text: "Sign In",
                 onTapListener: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MainScreen()));
+                  Navigator.pushNamed(context, PageConsts.MainScreen);
                 },
               ),
               Flexible(
@@ -54,10 +53,7 @@ class SignInPage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUpPage()));
+                      Navigator.pushNamed(context, PageConsts.SignUpPage);
                     },
                     child: Text(
                       "Sign Up",

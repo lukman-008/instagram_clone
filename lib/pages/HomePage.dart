@@ -4,6 +4,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/consts.dart';
 import 'package:instagram_clone/pages/comment_page.dart';
+import 'package:instagram_clone/pages/widget/UpdatePostPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -68,7 +69,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    Icon(Icons.more_vert_outlined),
+                    GestureDetector(
+                        onTap: () {
+                          _openModelSheet(context);
+                        },
+                        child: Icon(Icons.more_vert_outlined)),
                   ],
                 ),
               ),
@@ -94,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               setState(() {
                                 n = !n;
-                                a = a - 1;
+                                n == true ? a = a + 1 : a = a - 1;
                               });
                             },
                             icon: Icon(
@@ -105,7 +110,8 @@ class _HomePageState extends State<HomePage> {
                             )),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>CommentPage()));
+                            Navigator.pushNamed(
+                                context, PageConsts.commentPage);
                           },
                           child: Icon(
                             Feather.message_circle,
@@ -137,7 +143,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  "500 likes",
+                  "$a likes",
                   style: TextStyle(
                       color: primaryColor,
                       fontWeight: FontWeight.bold,
@@ -204,7 +210,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    Icon(Icons.more_vert_outlined),
+                    GestureDetector(
+                        onTap: () {}, child: Icon(Icons.more_vert_outlined)),
                   ],
                 ),
               ),
@@ -230,6 +237,7 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               setState(() {
                                 m = !m;
+                                m == true ? b = b + 1 : b = b - 1;
                               });
                             },
                             icon: Icon(
@@ -268,7 +276,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  "500 likes",
+                  "$b likes",
                   style: TextStyle(
                       color: primaryColor,
                       fontWeight: FontWeight.bold,
@@ -310,5 +318,74 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ));
+  }
+
+  _openModelSheet(BuildContext context) {
+    return showBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 150,
+            decoration: BoxDecoration(color: backGroundColor.withOpacity(0.8)),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 10),
+                    child: Text(
+                      'MoreOptions',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: primaryColor),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Divider(
+                    thickness: 1,
+                    color: secondaryColor,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Delete  Post",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: primaryColor),
+                    ),
+                  ),
+                  sizeVer(7),
+                  Divider(
+                    thickness: 1,
+                    color: secondaryColor,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, PageConsts.UpdatePostPage);
+                      },
+                      child: Text(
+                        "Update Post",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: primaryColor),
+                      ),
+                    ),
+                  ),
+                  sizeVer(7)
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
