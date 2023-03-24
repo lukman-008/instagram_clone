@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/consts.dart';
+import 'package:instagram_clone/pages/comment_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -102,9 +103,14 @@ class _HomePageState extends State<HomePage> {
                                   : Icons.favorite_border_outlined,
                               color: primaryColor,
                             )),
-                        Icon(
-                          Feather.message_circle,
-                          color: primaryColor,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>CommentPage()));
+                          },
+                          child: Icon(
+                            Feather.message_circle,
+                            color: primaryColor,
+                          ),
                         ),
                         sizeHor(10),
                         Icon(
